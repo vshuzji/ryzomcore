@@ -145,12 +145,12 @@ protected:
 
 		CVar uniqueOnShardServices;
 		uniqueOnShardServices.Type = NLMISC::CConfigFile::CVar::T_STRING;
-		uniqueOnShardServices.setAsString((vector<string>) {});
+		uniqueOnShardServices.setAsString(vector<string>{});
 		namingService.ConfigFile.insertVar("UniqueOnShardServices", uniqueOnShardServices);
 
 		CVar uniqueByMachineServices;
 		uniqueByMachineServices.Type = NLMISC::CConfigFile::CVar::T_STRING;
-		uniqueByMachineServices.setAsString((vector<string>) {});
+		uniqueByMachineServices.setAsString(vector<string> {});
 		namingService.ConfigFile.insertVar("UniqueByMachineServices", uniqueByMachineServices);
 
 		CVar nsPort;

@@ -34,7 +34,6 @@ using testing::SizeIs;
 using testing::StrEq;
 
 using CVar = NLMISC::CConfigFile::CVar;
-using NLMISC::IStream;
 using NLMISC::nlSleep;
 using NLNET::CCallbackClient;
 using NLNET::CCallbackNetBase;
@@ -48,7 +47,7 @@ struct VLPRequest
 	ucstring login;
 	std::string cpassword;
 	std::string application;
-	void serial(IStream &stream)
+	void serial(NLMISC::IStream &stream)
 	{
 		stream.serial(login);
 		stream.serial(cpassword);
@@ -60,7 +59,7 @@ struct VLPResponse
 {
 	std::string reason;
 	std::vector<OnlineShardProjection> shards;
-	void serial(IStream &stream)
+	void serial(NLMISC::IStream&stream)
 	{
 		stream.serial(reason);
 		if (reason.empty())
@@ -80,7 +79,7 @@ struct VLPResponse
 struct CSRequest
 {
 	sint32 shardid;
-	void serial(IStream &stream)
+	void serial(NLMISC::IStream&stream)
 	{
 		stream.serial(shardid);
 	}
@@ -89,7 +88,7 @@ struct CSRequest
 struct SCSResponse
 {
 	std::string reason;
-	void serial(IStream &stream)
+	void serial(NLMISC::IStream&stream)
 	{
 		stream.serial(reason);
 		if (reason.empty())
